@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import showStore from "../stores/showStore";
+import Header from "../components/Header";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -60,6 +61,7 @@ export default function Show() {
 
     return (
         <div>
+            <Header back/>
             <header>
                 <img src={store.dataRes.data.image.large} />
                 <h2> 
