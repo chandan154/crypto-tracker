@@ -4,6 +4,9 @@ import axios from 'axios'
 const showStore = create((set) => ({
     graphData: [],
     dataRes: [],
+    reset: () => {
+        set({graphData: [], data: null});
+    },
     fetchData: async (id) => {
         
         const [graphRes, dataRes,] = await Promise.all([
