@@ -14,6 +14,7 @@ import classNames from "classnames"
 export default function Home() {
     const store = homeStore()
 
+    //useEffect makes sure that every time the page is loaded, it will run first
     React.useEffect(() => {
         if(store.trending.length === 0)store.fetchCoins()
     }, [])
@@ -31,7 +32,7 @@ export default function Home() {
             </header>
             <div className="home-cryptos">
                 <div className="width">
-                    <h2>{store.searched ? "Search Results" :"trending coins"}</h2>
+                    <h2>{store.searched ? "Search Results" :"Trending coins"}</h2>
                     <div className="home-cryptos-list">
                     {store.coins.map(coin =>{
                     return <ListItem key={coin.id} coin={coin}/>;  
